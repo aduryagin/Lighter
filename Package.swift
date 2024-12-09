@@ -8,7 +8,7 @@ var package = Package(
   platforms: [ .macOS(.v10_15), .iOS(.v13) ],
   
   products: [
-    .library(name: "Lighter",         targets: [ "Lighter"       ]),
+    .library(name: "Lighter", type: .dynamic, targets: [ "Lighter" ]),
     .library(name: "SQLite3Schema",   targets: [ "SQLite3Schema" ]),
 
     .executable(name: "sqlite2swift", targets: [ "sqlite2swift"  ]),
