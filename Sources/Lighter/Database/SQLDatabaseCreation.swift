@@ -19,7 +19,11 @@ public protocol SQLCreationStatementsHolder {
 import struct Foundation.URL
 import class  Foundation.FileManager
 #endif
+#if os(Android)
+import SQLCipher
+#else
 import SQLite3
+#endif
 
 
 public extension SQLDatabase {

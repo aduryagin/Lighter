@@ -5,7 +5,11 @@
 
 import struct Foundation.URL
 import struct Foundation.TimeInterval
+#if os(Android)
+import SQLCipher
+#else
 import SQLite3
+#endif
 
 /**
  * An object used to open a database connection.

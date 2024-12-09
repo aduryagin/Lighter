@@ -3,7 +3,11 @@
 //  Copyright © 2022 ZeeZide GmbH.
 //
 
-import func SQLite3.sqlite3_column_int64
+#if os(Android)
+import SQLCipher
+#else
+import SQLite3
+#endif
 
 /**
  * Runs fetch queries against a certain SQL table/view.

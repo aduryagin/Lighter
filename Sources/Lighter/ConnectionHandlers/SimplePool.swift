@@ -11,7 +11,12 @@ import struct Foundation.Date
 import struct Foundation.TimeInterval
 import struct Foundation.URL
 import Dispatch
-import func SQLite3.sqlite3_close
+
+#if os(Android)
+import SQLCipher
+#else
+import SQLite3
+#endif
 
 #if os(iOS)
 import UIKit

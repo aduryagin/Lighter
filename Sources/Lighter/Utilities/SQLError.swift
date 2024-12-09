@@ -3,8 +3,11 @@
 //  Copyright © 2022-2024 ZeeZide GmbH.
 //
 
-import func SQLite3.sqlite3_errcode
-import func SQLite3.sqlite3_errmsg
+#if os(Android)
+import SQLCipher
+#else
+import SQLite3
+#endif
 
 /**
  * A raw SQLite3 error.

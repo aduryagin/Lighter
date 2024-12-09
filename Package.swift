@@ -17,6 +17,10 @@ var package = Package(
     .plugin(name: "Generate Code for SQLite",
             targets: [ "Generate Code for SQLite" ])
   ],
+
+  dependencies: [
+    .package(url: "https://github.com/skiptools/swift-sqlite.git", from: "1.1.0"),
+  ],
   
   targets: [
     // A small library used to fetch schema information from SQLite3 databases.
@@ -26,8 +30,12 @@ var package = Package(
     // generated models and such.
     // Note that Lighter isn't that useful w/o code generation (i.e. as a
     // standalone lib).
-    .target(name: "Lighter"),
-
+    .target(
+      name: "Lighter",
+      dependencies: [
+        .product(name: "SQLCipher", package: "swift-sqlite")
+      ]
+    ),
 
     // MARK: - Plugin Support
     

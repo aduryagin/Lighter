@@ -12,3 +12,5 @@ TestGeneration.txt
 .docker.build
 .DS_Store
 
+# VSCode
+launch.json

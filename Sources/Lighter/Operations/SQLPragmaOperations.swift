@@ -3,7 +3,11 @@
 //  Copyright © 2022 ZeeZide GmbH.
 //
 
+#if os(Android)
+import SQLCipher
+#else
 import SQLite3
+#endif
 
 public extension SQLDatabaseOperations {
   

@@ -3,7 +3,11 @@
 //  Copyright © 2022 ZeeZide GmbH.
 //
 
+#if os(Android)
+import SQLCipher
+#else
 import SQLite3
+#endif
 
 // Filter operations use regular Swift closures for filtering results (as part
 // of a SQL `WHERE` expression).

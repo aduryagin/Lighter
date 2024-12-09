@@ -3,7 +3,11 @@
 //  Copyright © 2022-2024 ZeeZide GmbH.
 //
 
+#if os(Android)
+import SQLCipher
+#else
 import SQLite3
+#endif
 #if canImport(Foundation)
 #if !(os(macOS) || os(iOS) || os(watchOS) || os(tvOS)) && swift(>=5.9)
   @preconcurrency import Foundation

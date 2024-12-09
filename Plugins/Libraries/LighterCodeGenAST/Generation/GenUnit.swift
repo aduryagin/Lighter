@@ -10,6 +10,17 @@ public extension CodeGenerator {
       writeln("@_exported import \(imp)")
     }
     for imp in unit.imports {
+      if (imp == "SQLite3") {
+        writeln("""
+        #if os(Android)
+        import SQLCipher
+        #else
+        import SQLite3
+        #endif
+        """)
+        continue
+      }
+      
       writeln("import \(imp)")
     }
 

@@ -3,8 +3,11 @@
 //  Copyright © 2022 ZeeZide GmbH.
 //
 
-import func SQLite3.sqlite3_close
-import let  SQLite3.SQLITE_FAIL
+#if os(Android)
+import SQLCipher
+#else
+import SQLite3
+#endif
 import struct Foundation.URL
 
 extension SQLConnectionHandler {

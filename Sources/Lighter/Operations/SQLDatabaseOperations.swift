@@ -24,7 +24,11 @@ public protocol SQLDatabaseOperations {
 }
 
 
+#if os(Android)
+import SQLCipher
+#else
 import SQLite3
+#endif
 
 // MARK: - Raw SQL Fetches
 
